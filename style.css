@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.center {
+  background-color: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) perspective(800px) rotateX(45deg);
+  border-radius: 50%;
+  border: 10px solid black;
+  box-shadow: 0 1px 0px #444, 0 2px 0px #444, 0 3px 0px #444, 0 4px 0px #444,
+    0 5px 0px #444, 0 6px 0px #444, 0 7px 0px #444, 0 8px 0px #444, 0 9px 0px #444,
+    0 10px 0px #444, 0 11px 0px #444, 0 12px 0px #444;
+
+  .shape {
+    width: 200px;
+    height: 200px;
+    border-bottom: 100px solid #fff;
+    border-radius: 50%;
+    animation: girar 4s linear infinite;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+
+    &::before {
+      left: 0%;
+      background-color: #fff;
+      border: 40px solid #000;
+    }
+
+    &::after {
+      right: 0%;
+      background-color: #000;
+      border: 40px solid #fff;
+    }
+  }
+}
+
+@keyframes girar {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
